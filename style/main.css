@@ -1,0 +1,775 @@
+/*MAIN StyleSheet*/
+
+
+/* styles par défaut mobile en-dessous de 960px */
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+
+}
+h1{
+	font-family: 'Nosifer', cursive;
+}
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+	display: block;
+}
+a, i, input[type="radio"], input[type="checkbox"] {
+	cursor: pointer;
+}
+[class*="col-"] {
+	width: 100%;
+	float: left;
+	padding: 0 15px;
+	/* ajout d'un padding pour décoller les colonnes */
+}
+.row:after {
+	content: "";
+	/*on crée un espace vide*/
+	clear: both;
+	/*on annule l'effet de float pour éviter que les éléments suivants remontent*/
+	display: block;
+	/*cela permet d'avoir un retour à la ligne*/
+}
+#wrapper {
+	width: 100%;
+}
+
+/*.expand {
+	display: block !important;
+}*/
+
+
+/*******************************
+	Header
+*******************************/
+
+#logo{
+	display: flex;
+	justify-content: space-between;
+}
+#logo i{
+
+	font-size: 40px;
+}
+#logo a{
+	color: #000;
+}
+#logo div{
+	margin: 10px 0 0 5%;
+}
+#logo h1{
+	margin: 0;
+	padding: 0 0 0 5%;
+	background-color: #fff;
+}
+#logo h1 a{
+	background-color: #fff;
+	text-decoration: none;
+	color: #000;
+	font-size: 60px;
+}
+#logo div{
+	padding: 20px 5% 0 0;
+}
+
+/*******************************
+	Menu
+*******************************/
+
+header .responsive-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background-color: #000;
+	color: #fff;
+}
+
+header .responsive-menu li {
+	font-size: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+header .responsive-menu li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+
+header .responsive-menu li a:visited {
+	color: #fff;
+}
+
+header .responsive-menu li a:hover {
+	color: red;
+}
+
+header .responsive-menu li a:active {
+	color: #fff;
+}
+
+/*******************************
+	Main (Index)
+*******************************/
+
+/*******************************
+	Slider (Index)
+*******************************/
+
+#slider #overflow {
+	width: 100%;
+	overflow: hidden;
+}
+
+#slider .photo img {
+	width: 100%;
+}
+
+#slider #slides .inner {
+	width: 300%;
+	overflow: hidden;
+}
+
+#slider #slides .photo {
+	float: left;
+	width: 33.33333%;
+	position: relative;
+}
+
+#slider #active label {
+	width: 10px;
+	height: 10px;
+	background: #000;
+	display: inline-block;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#slider #active {
+	text-align: center;
+}
+
+#slider input {
+	display: none;
+}
+
+#slider #slide1:checked~#slides .inner {
+	margin-left: 0;
+}
+
+#slider #slide2:checked~#slides .inner {
+	margin-left: -100%;
+}
+
+#slider #slide3:checked~#slides .inner {
+	margin-left: -200%;
+}
+
+#slider #slides .inner {
+	transition: all 0.8s ease-in-out;
+}
+
+/*******************************
+	Instrument icons (Index)
+*******************************/
+
+#home #wrapper .row {
+	padding: 0;
+	
+}
+
+#home #wrapper div {
+	/*margin: 5px 0 15px 0;*/
+}
+
+#home #wrapper .main-content>* {
+	/*padding: 0 40px;*/
+}
+
+#home #wrapper .div-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 10%;
+	padding: 0 30px;
+	margin-bottom: 15px;
+	background-color: #fff;
+	color: #000;
+}
+
+#home #wrapper .div-content .main-content {
+	padding: 0;
+}
+
+#home #wrapper .div-content img {
+	max-width: 100%;
+	margin-right: 30px;
+}
+
+#home #wrapper div p {
+	text-align: justify;
+}
+
+
+/*******************************
+	Footer
+*******************************/
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #000;
+	padding: 10px;
+	height: 50px;
+	width: 100%;
+}
+footer p{
+	color: #fff;
+}
+footer span {
+	font-size: 20px;
+	color: #fff;
+}
+
+footer .icons-social-media i {
+	font-size: 30px;
+	margin-left: 20px;
+	color: #fff;
+}
+
+/*******************************
+	Categories
+*******************************/
+
+.categories .row {
+	padding: 0;
+	background-color: #000;
+}
+.categories .div-content {
+	text-align: center;
+	padding: 0 0 30px 0;
+	background-color: #ddd;
+	color: #000;
+}
+.categories .div-content:nth-of-type(2) {
+	border-top: 10px solid #000;
+	border-bottom: 10px solid #000;
+}
+.categories .div-content img {
+	max-width: 100%;
+	margin: 0;
+}
+
+.categories .div-content h3{
+	margin: 0;
+	padding: 15px 0;
+	font-size: 30px;
+}
+.categories .div-content p {
+	padding: 0 2%;
+	margin: 10px 0;
+
+}
+.categories .div-content a {
+	color: #000;
+	text-decoration: none;
+}
+.categories .div-content a:hover{
+	text-decoration: underline;
+}
+/*******************************
+	CONTACT
+*******************************/
+
+.form {
+	margin-top: 15px;
+}
+input, select {
+	margin: 10px 0;
+}
+#contacttab {
+	width: 98%;
+	margin: 0 auto;
+}
+#background{
+	background-image: url("../images/bckgrnd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+}
+#contact{
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+}
+
+#contacttab fieldset {
+	border: 0;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
+#lessons{
+	width: 100%;
+	height: 25px;
+	background-color: #000;
+	border: 0;
+	outline: none;
+	/* enlever contour lorsque sélectionné */
+	color: #fff;
+	cursor: pointer;
+}
+#lessons option{
+	background-color: #fff;
+	color: #000;
+}
+
+#contact input[type="text"],#contact input[type="tel"],#contact input[type="email"],#contact input[type="number"] {
+	width: 100%;
+	height: 25px;
+	background-color: #000;
+	border: 0;
+	outline: none;
+	/* enlever contour lorsque sélectionné */
+	color: #fff;
+	padding-left: 5px;
+}
+
+#contact h2 {
+	display: inline-block;
+	background-color: #000;
+	color: #fff;
+	font-size: 15px;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	text-align: left;
+	padding-left: 5px;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+#contact input[type="radio"]{
+	margin-left: 10px;
+}
+.radio{
+	background-color: #000;
+	color: #fff;
+}
+.radio label {
+	cursor: pointer;
+	font-size: 15px;
+}
+#contacttab div textarea {
+	height: 80px;
+	width: 100%;
+	font-size: 13px;
+	border: 0;
+	background-color: #000;
+	outline: 0;	/* enlever contour lorsque sélectionné */
+	color: #fff;
+	padding-left: 5px;
+	margin-top: 15px;
+}
+
+#contactbtn {
+	margin: 15px 0 20px 0;
+}
+#contactbtn input {
+	width: 60px;
+	border: 0;
+	background-color: #000;
+	color: #fff;
+	outline: none;
+	padding: 5px;
+	cursor: pointer;
+}
+#contactbtn input[type="submit"] {
+	margin-right: 10px;
+}
+
+/*******************************
+	Details
+*******************************/
+
+.details .row {
+	padding: 0;
+	background-color: #000;
+}
+.details .div-content {
+	text-align: center;
+	padding: 0 0 30px 0;
+	background-color: #ddd;
+	color: #000;
+}
+
+.details .div-content img {
+	max-width: 100%;
+	margin: 0;
+}
+
+.details .div-content h3{
+	margin: 0;
+	padding: 15px 0 0 0;
+	font-size: 30px;
+}
+.details .div-content p {
+	padding: 0;
+	margin: 10px 0;
+}
+.details .div-content p a {
+	color: red;
+	font-weight: bold;
+}
+
+/*******************************
+	Instruments
+*******************************/
+#instruments{
+	background-color: #000;
+}
+#instruments h2{
+	margin: 0;
+	padding: 10px 0 10px 5px;
+	color: #fff;
+}
+#instruments .row {
+	padding: 0;
+}
+
+#instruments .div-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0 30px;
+	margin: 0;
+	background-color: #ddd;
+	color: #000;
+	border: 5px solid #000;
+}
+
+#instruments .div-content .main-content {
+	padding: 3%;
+}
+
+#instruments .div-content a img {
+	max-width: 100%;
+	margin-right: 30px;
+}
+
+#instruments div p {
+	text-align: justify;
+}
+#instruments a{
+
+}
+#instruments a:hover{
+	text-decoration: underline;
+}
+
+/*******************************
+	Shopping cart
+*******************************/
+
+#catalog{
+	margin-left: 5%;
+	font-weight: bold;
+}
+
+/*******************************
+	Views / Cart
+*******************************/
+
+.cart{
+	text-align: center;
+	margin-top: 15px;
+}
+.cart i{
+	font-size: 25px;
+	cursor: inherit;
+}
+.cart label{
+	font-weight: bold;
+	display: inline-block; /* aligner label */
+	width: 350px;
+}
+.cart input[type="number"]{
+
+}
+.shoppingcart{
+	text-align: center;
+
+}
+#cartbtn{
+	text-align: center;
+
+}
+#cartbtn input{
+	width: 60px;
+	border: 0;
+	background-color: #000;
+	color: #fff;
+	outline: none;
+	padding: 5px;
+	cursor: pointer;
+}
+#cartbtn input:hover{
+	color: #ff0000;
+
+}
+
+/*****************************************
+	******************************************
+	styles pour desktop à partir de 960px
+	******************************************
+*****************************************/
+@media only screen and (min-width:960px) {
+	/* largeur d'une colonne pour desktop =1/12e*/
+	
+	.col-1 {
+		width: 8.33%;
+	}
+	/* largeur de 2 colonnes pour desktop */
+	
+	.col-2 {
+		width: 16.66%;
+	}
+	/*largeur de 3 colonnes pour desktop*/
+	
+	.col-3 {
+		width: 25%;
+	}
+	/*largeur de 4 colonnes pour desktop*/
+	
+	.col-4 {
+		width: 33.33%;
+	}
+	/*largeur de 5 colonnes pour desktop*/
+	
+	.col-5 {
+		width: 41.66%;
+	}
+	/*largeur de 6 colonnes pour desktop*/
+	
+	.col-6 {
+		width: 50%;
+	}
+	/*largeur de 7 colonnes pour desktop*/
+	
+	.col-7 {
+		width: 58.33%;
+	}
+	/*largeur de 8 colonnes pour desktop*/
+	
+	.col-8 {
+		width: 66.66%;
+	}
+	/*largeur de 9 colonnes pour desktop*/
+	
+	.col-9 {
+		width: 75%;
+	}
+	/*largeur de 10 colonnes pour desktop*/
+	
+	.col-10 {
+		width: 83.33%;
+	}
+	/*largeur de 11 colonnes pour desktop*/
+	
+	.col-11 {
+		width: 91.66%;
+	}
+	/*largeur de 12 colonnes pour desktop*/
+	
+	.col-12 {
+		width: 100%;
+	}
+	/**************** Header (Desktop) ******************/
+	
+	header {
+		background-color: white;
+		padding: 0;
+	}
+	header #menu-top {
+		padding: 0 13vw;
+	}
+	
+	header #menu-top #icons-menu-top #menu-btn {
+		display: none;
+	}
+	
+	header .responsive-menu {
+		display: block;
+		max-height: inherit;
+		background-color: #fff;
+	}
+	
+	header .responsive-menu ul {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		
+	}
+	
+	header .responsive-menu ul li i {
+		display: none;
+	}
+	
+	.desktop-search-container {
+		display: block;
+		position: relative;
+	}
+	
+	header #menu-top .desktop-search-container i {
+		position: absolute;
+		right: -7px;
+		font-size: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	header #menu-top .desktop-search-container #desktop-search {
+		display: block;
+		-webkit-appearance: none;
+		position: relative;
+		width: 30vw;
+		height: 40px;
+		font-size: 15px;
+		padding: 0 35px 0 10px;
+		border: none;
+		border-bottom: 1px solid #f8f8f8;
+		color: #4a4a4a;
+		outline: none;
+	}
+	
+	header #menu-top .desktop-search-container #desktop-search::-webkit-input-placeholder {
+		color: #f8f8f8;
+	}
+	
+	header #menu-top .desktop-search-container #desktop-search::-moz-placeholder {
+		color: #f8f8f8;
+	}
+	
+	header #menu-top .desktop-search-container #desktop-search:-ms-input-placeholder {
+		color: #f8f8f8;
+	}
+	
+	header #menu-top .desktop-search-container #desktop-search:-moz-placeholder {
+		/* Firefox 18- */
+		color: #f8f8f8;
+	}
+	#slider #active {
+		margin: 15px;
+	}
+	#home #wrapper .row {
+		padding: 0 2vw;
+		background-color: #fff;
+	}
+	#home #wrapper .div-content {
+		display: block;
+		text-align: center;
+		padding: 30px;
+		margin: 0;
+	}
+	
+	#home #wrapper .div-content img {
+		margin: 0;
+	}
+	
+	#home #wrapper .div-content p {
+		padding: 0;
+		margin: 10px;
+		text-align: justify;
+	}
+
+	/*******************************
+		Categories
+	*******************************/
+	.categories .div-content p {
+		padding: 0 5%;
+	}
+
+
+	/*******************************
+		CONTACT
+	*******************************/
+	
+	#contacttab {
+		text-align: left;
+		margin: 0 auto;
+		width: 50%;
+	}
+	
+	.form label {
+		text-align: left;
+		font-weight: bold;
+	}
+	#lessons{
+		margin: 0;
+	}
+	#contact input[type="text"], input[type="tel"], input[type="email"], input[type="number"] {
+		margin-top: 0;
+	}
+	.radio{
+		background-color: #000;
+	}
+	.radio label {
+		color: #fff;
+	}
+	#contact h2 {
+		margin-bottom: 0;
+	}
+
+
+	/*******************************
+		Details
+	*******************************/
+	.details .div-content p {
+		padding: 0 10%;
+	}
+
+	/*******************************
+		INSTRUMENTS
+	*******************************/
+	
+	#instruments .row {
+		padding: 0 1vw;
+		background-color: #000;
+	}
+	#instruments .div-content {
+		text-align: center;
+		padding: 30px;
+		margin: 0;
+		height: 450px;
+	}
+	#instruments .div-content a img {
+		margin: 0;
+		max-width: 100%;
+		max-height: 100%;
+
+	}
+
+	#instruments .div-content p{
+		padding: 2%;
+		margin: 10px;
+		text-align: center;
+
+
+	}
+
+
+
+}
+/* end styles desktop */
