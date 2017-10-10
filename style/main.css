@@ -294,7 +294,7 @@ footer .icons-social-media i {
 	margin-top: 15px;
 }
 input, select {
-	margin: 10px 0;
+	margin: 10px 0 0 0;
 }
 #contacttab {
 	width: 98%;
@@ -320,7 +320,7 @@ input, select {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: rgba(255, 255, 255, 0.6);
 }
-#lessons{
+#fn_lessons{
 	width: 100%;
 	height: 25px;
 	background-color: #000;
@@ -329,8 +329,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	/* enlever contour lorsque sélectionné */
 	color: #fff;
 	cursor: pointer;
+	margin-bottom: 5px;
 }
-#lessons option{
+#fn_lessons option{
 	background-color: #fff;
 	color: #000;
 }
@@ -380,6 +381,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: #fff;
 	padding-left: 5px;
 	margin-top: 15px;
+	margin-bottom: 0;
 }
 
 #contactbtn {
@@ -396,6 +398,30 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 #contactbtn input[type="submit"] {
 	margin-right: 10px;
+}
+#contactbtn span{
+	display: inline-block;
+	width: 60px;
+	background-color: #000;
+	color: #fff;
+	height: 25px;
+	text-align: center;
+}
+#contactbtn span a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.msg_validation{
+	color: #fff;
+	background-color: red;
+	font-weight: bold;
+	padding-left: 5px;
+	margin-top: 5px;
+}
+.msg_validation:last-of-type{
+	margin-top: 0;
 }
 
 /*******************************
@@ -484,6 +510,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #catalog{
 	margin-left: 5%;
 	font-weight: bold;
+}
+#catalog input{
+	margin-bottom: 5px;
 }
 
 /*******************************
@@ -716,7 +745,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 		text-align: left;
 		font-weight: bold;
 	}
-	#lessons{
+	#fn_lessons{
 		margin: 0;
 	}
 	#contact input[type="text"], input[type="tel"], input[type="email"], input[type="number"] {

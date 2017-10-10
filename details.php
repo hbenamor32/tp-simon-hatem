@@ -32,7 +32,7 @@ require_once 'views/header.php';
     <p><?= $prod[PROD_DESC_D] ?></p>
         <h4><?= $prod[PROD_PRICE] ?></h4>
 
-        <p><a href="?">add to cart</a></p>
+        <p><a href="?">buy it now</a></p>
 
 
     </div>
