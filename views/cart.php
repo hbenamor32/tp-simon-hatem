@@ -25,7 +25,7 @@ $total = get_cart_total($card);
         ?>
 
     <div class="shop"><strong>Total : </strong><mark><?= $total ?> $</mark></div>
-    <div class="shop"><a href="shopping_cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"><?=' '.count($card)?></i></a></div>
+    <div class="shop"><i class="fa fa-shopping-cart" aria-hidden="true"><?=' '.count($card)?></i></div>
 
     <form method="post">
         <div id="cartbtn">

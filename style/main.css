@@ -479,14 +479,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: red;
 	font-weight: bold;
 }
-.detailscart label{
 
-
-}
 .detailscart{
 	margin: 25px 0;
 }
-
+.addtocart{
+	font-weight: bold;
+	margin-top: 20px;
+}
 /*******************************
 	Instruments
 *******************************/
@@ -580,10 +580,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 .cart i{
 	font-size: 25px;
-
-}
-.cart a{
-	color: #000;
+	cursor: inherit;
 }
 .cart label{
 	font-weight: bold;

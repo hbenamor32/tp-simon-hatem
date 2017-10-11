@@ -45,7 +45,7 @@ require_once 'views/header.php';
         <?php foreach ($icons as $icon => $title) { ?>
 
             <div class="col-4 div-content">
-                <img src = "images/<?=$icon?>icon.png" alt = "<?=$title?> Guitar Icon" />
+                <a href="categories.php"><img src = "images/<?=$icon?>icon.png" alt = "<?=$title?> Guitar Icon" /></a>
                 <div class="main-content">
                     <h2><?=$title?> Guitars</h2>
                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat .</p>

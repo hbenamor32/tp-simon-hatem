@@ -34,14 +34,14 @@ require_once 'views/header.php';
         <form class="detailscart" method="post">
 
             <label><span class="pricetag"><?=$prod[PROD_PRICE]?></span></label>
-
+            <div class="addtocart"><span>Add to cart</span>
             <input type="hidden" name="card_item_id" value="<?= $prod_id ?>" />
             <input type="number" min="0" max="99" name="card_item_qty"
-            data-mini="true" value="<?= (array_key_exists($prod_id, $card) ) ?  $card[$prod_id] :  '0' ?>" />
-
+            data-mini="true" value="<?= (array_key_exists($prod_id, $card) ) ?  $card[$prod_id]++ :  '0' ?>" />
+            </div>
         </form>
-<hr>
-        <?php require('views/cart.php'); // Affichage ?>
+
+
 
 
 
