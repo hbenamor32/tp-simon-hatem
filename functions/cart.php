@@ -2,6 +2,15 @@
 
 const CARD_NAME = 'cart';
 
+function get_cart_total($card) {
+    global $products;
+    $result = 0;
+    foreach ($card as $item_id => $item_qty) {
+        $result += $products[$item_id][PROD_PRICE] * $item_qty;
+    }
+    return $result;
+}
+
 if ( session_status() === PHP_SESSION_NONE ) { // Regarde si la session a été démarré ou pas
     session_start();
 }

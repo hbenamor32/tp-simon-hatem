@@ -3,6 +3,9 @@
 
 /* styles par défaut mobile en-dessous de 960px */
 
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+	display: block;
+}
 * {
 	box-sizing: border-box;
 }
@@ -14,9 +17,13 @@ body {
 h1{
 	font-family: 'Nosifer', cursive;
 }
-article, aside, details, figcaption, figure, footer, header, main, nav, section {
-	display: block;
+mark{
+	background-color: #000;
+	color: #fff;
+	padding: 2px;
+	font-weight: normal;
 }
+
 a, i, input[type="radio"], input[type="checkbox"] {
 	cursor: pointer;
 }
@@ -296,6 +303,7 @@ footer .icons-social-media i {
 input, select {
 	margin: 10px 0 0 0;
 }
+
 #contacttab {
 	width: 98%;
 	margin: 0 auto;
@@ -311,7 +319,14 @@ input, select {
 	height: 100%;
 	background: rgba(255, 255, 255, 0.7);
 }
+.parsent{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	font-weight: bold;
+	color: green;
 
+}
 #contacttab fieldset {
 	border: 0;
 	margin: 0;
@@ -396,6 +411,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	padding: 5px;
 	cursor: pointer;
 }
+#contactbtn input:hover{
+	color: red;
+}
 #contactbtn input[type="submit"] {
 	margin-right: 10px;
 }
@@ -413,6 +431,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	font-size: 14px;
 	font-weight: bold;
 }
+#contactbtn span a:hover{
+	color: red;
+}
 .msg_validation{
 	color: #fff;
 	background-color: red;
@@ -420,9 +441,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	padding-left: 5px;
 	margin-top: 5px;
 }
-.msg_validation:last-of-type{
+.msgval{
 	margin-top: 0;
 }
+
 
 /*******************************
 	Details
@@ -456,6 +478,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .details .div-content p a {
 	color: red;
 	font-weight: bold;
+}
+.detailscart label{
+
+
+}
+.detailscart{
+	margin: 25px 0;
 }
 
 /*******************************
@@ -507,6 +536,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	Shopping cart
 *******************************/
 
+
 #catalog{
 	margin-left: 5%;
 	font-weight: bold;
@@ -514,30 +544,61 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #catalog input{
 	margin-bottom: 5px;
 }
+.shopcart{
+	margin-bottom: 15px;
+}
+.shopcart label{
+	font-weight: bold;
+	display: inline-block; /* aligner label */
+	width: 236px;
+	text-align: left;
+
+}
+.shopcart span{
+	width: 60px;
+	display: inline-block;
+	text-align: center;
+}
+.scart{
+	margin-top: 15px;
+
+}
+
 
 /*******************************
 	Views / Cart
 *******************************/
-
+.shoppingcart{
+	text-align: center;
+	margin-top: 15px;
+	background-color: #ddd;
+	padding: 5px 0;
+}
 .cart{
 	text-align: center;
 	margin-top: 15px;
 }
 .cart i{
 	font-size: 25px;
-	cursor: inherit;
+
+}
+.cart a{
+	color: #000;
 }
 .cart label{
 	font-weight: bold;
 	display: inline-block; /* aligner label */
-	width: 350px;
+	width: 236px;
 }
-.cart input[type="number"]{
-
+input[type=number]::-webkit-inner-spin-button {
+	opacity: 1;
 }
-.shoppingcart{
+.shop{
 	text-align: center;
-
+	margin-top: 15px;
+}
+.labelcart{
+	text-align: left;
 }
 #cartbtn{
 	text-align: center;
@@ -555,6 +616,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #cartbtn input:hover{
 	color: #ff0000;
 
+}
+.pricetag{
+	width: 60px;
+	display: inline-block;
+	background-color: #000;
+	color: #fff;
 }
 
 /*****************************************

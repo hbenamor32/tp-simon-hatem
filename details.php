@@ -28,11 +28,21 @@ require_once 'views/header.php';
     <h3><?=$prod[PROD_NAME]?></h3>
         <h4><?=$prod[PROD_MODEL]?></h4>
         <h4><?=$prod[PROD_COLOR]?></h4>
-    <img src="images/<?= $prod[PROD_IMG2] ?>" alt="<?= $prod[PROD_IMG2] ?>"/>
-    <p><?= $prod[PROD_DESC_D] ?></p>
-        <h4><?= $prod[PROD_PRICE] ?></h4>
+        <img src="images/<?= $prod[PROD_IMG2] ?>" alt="<?= $prod[PROD_IMG2] ?>"/>
+        <p><?= $prod[PROD_DESC_D] ?></p>
 
-        <p><a href="?">buy it now</a></p>
+        <form class="detailscart" method="post">
+
+            <label><span class="pricetag"><?=$prod[PROD_PRICE]?></span></label>
+
+            <input type="hidden" name="card_item_id" value="<?= $prod_id ?>" />
+            <input type="number" min="0" max="99" name="card_item_qty"
+            data-mini="true" value="<?= (array_key_exists($prod_id, $card) ) ?  $card[$prod_id] :  '0' ?>" />
+
+        </form>
+<hr>
+        <?php require('views/cart.php'); // Affichage ?>
+
 
 
     </div>

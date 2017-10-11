@@ -51,14 +51,14 @@ $vld = array(
     FN_TELEPHONE => array(
         K_IS_VALID => false,
         K_VALUE => null,
-        K_FORMAT => '/\w{2,}/', // Format téléphone
-        K_ERR_MSG => 'The phone number must be like this 514-555-5555',
+        K_FORMAT => "/\(\d{3}\)\d{3}-\d{4}/", // Format téléphone
+        K_ERR_MSG => 'The phone number must be like this (514)555-5555',
     ),
     FN_EMAIL => array(
         K_IS_VALID => false,
         K_VALUE => null,
-        K_FORMAT => '/\w{2,}/',
-        K_ERR_MSG => 'The email must be in this format example@email.com.',
+        K_FORMAT => null,
+        K_ERR_MSG => 'The email must be like this example@email.com.',
     ),
     FN_INSTRUMENT => array(
         K_IS_VALID => false,
@@ -114,6 +114,7 @@ if ($en_reception) {
 //   Validation du champ FN_NOM
     if (array_key_exists(FN_NOM , $_POST)){
         $vld[FN_NOM][K_VALUE] = filter_input(INPUT_POST, FN_NOM, FILTER_SANITIZE_STRING);
+        $_POST[FN_NOM] = trim($_POST[FN_NOM]);
         // filter_input renvoie false si le champ n'est pas valide
         $vld[FN_NOM][K_IS_VALID] = (false !== $vld[FN_NOM][K_VALUE])
             && (1 === preg_match($vld[FN_NOM][K_FORMAT], $vld[FN_NOM][K_VALUE]));
@@ -121,6 +122,7 @@ if ($en_reception) {
 //   Validation du champ FN_PRENOM
     if (array_key_exists(FN_PRENOM , $_POST)){
         $vld[FN_PRENOM][K_VALUE] = filter_input(INPUT_POST, FN_PRENOM, FILTER_SANITIZE_STRING);
+        $_POST[FN_PRENOM] = trim($_POST[FN_PRENOM]);
         // filter_input renvoie false si le champ n'est pas valide
         $vld[FN_PRENOM][K_IS_VALID] = (false !== $vld[FN_PRENOM][K_VALUE])
             && (1 === preg_match($vld[FN_PRENOM][K_FORMAT], $vld[FN_PRENOM][K_VALUE]));
@@ -134,10 +136,9 @@ if ($en_reception) {
     }
 //   Validation du champ FN_EMAIL
     if (array_key_exists(FN_EMAIL , $_POST)){
-        $vld[FN_EMAIL][K_VALUE] = filter_input(INPUT_POST, FN_EMAIL, FILTER_SANITIZE_STRING);
+        $vld[FN_EMAIL][K_VALUE] = filter_input(INPUT_POST, FN_EMAIL, FILTER_VALIDATE_EMAIL);
         // filter_input renvoie false si le champ n'est pas valide
-        $vld[FN_EMAIL][K_IS_VALID] = (false !== $vld[FN_EMAIL][K_VALUE])
-            && (1 === preg_match($vld[FN_EMAIL][K_FORMAT], $vld[FN_EMAIL][K_VALUE]));
+        $vld[FN_EMAIL][K_IS_VALID] = (false !== $vld[FN_EMAIL][K_VALUE]);
     }    
 //  Validation des boutons radio FN_INSTRUMENT
     if (array_key_exists(FN_INSTRUMENT , $_POST)) {
@@ -152,6 +153,7 @@ if ($en_reception) {
 //  VALIDATION DES CHECKBOXES  FN_DATE_ARRIVEE
     if (array_key_exists(FN_COMMENTAIRE , $_POST)){
         $vld[FN_COMMENTAIRE][K_VALUE] = filter_input(INPUT_POST, FN_COMMENTAIRE, FILTER_SANITIZE_STRING);
+        $_POST[FN_COMMENTAIRE] = trim($_POST[FN_COMMENTAIRE]);
         $vld[FN_COMMENTAIRE][K_IS_VALID] = (false !== $vld[FN_COMMENTAIRE][K_VALUE])
             && (strlen($vld[FN_COMMENTAIRE][K_VALUE]) >= 10);
     }
@@ -166,17 +168,8 @@ if ($en_reception) {
 
     //Si le questionnaire est valide, on affiche un résumé (ou une redirection vers une autre page)
     if ($formulaire_valide) {
-        echo '<p><a href="', basename($_SERVER["SCRIPT_FILENAME"]),'">Relancer la page</a></p>';
-        echo '<ul>';
-        echo '<li>', $vld[FN_NOM][K_VALUE], '</li>';
-        echo '<li>', $vld[FN_PRENOM][K_VALUE], '</li>';
-        echo '<li>',$vld[FN_TELEPHONE][K_VALUE], '</li>';
-        echo '<li>',$vld[FN_EMAIL][K_VALUE], '</li>';
-        echo '<li>',$vld[FN_INSTRUMENT][K_VALUE], '</li>';
-        echo '<li>',$vld[FN_LESSONS][K_VALUE], '</li>';
-        echo '<li>',$vld[FN_COMMENTAIRE][K_VALUE], '</li>';
-       echo '</ul>';
-        exit ('Formulaire valide');
+        echo '<p class="parsent">Your request has been delivered.</p>';
+
     }
     $formulaire_valide = false;
 
@@ -211,7 +204,7 @@ if ($en_reception) {
                         <!-- téléphone -->
                         <div class="form <?= invalid(FN_TELEPHONE) ? CLASS_INVALID : '' ?>">
                             <label for="<?= FN_TELEPHONE ?>">PHONE</label>
-                            <input type="tel" name="<?= FN_TELEPHONE ?>" id="<?= FN_TELEPHONE ?>" placeholder="514-555-5555" maxlength="12"  value="<?= array_key_exists(FN_TELEPHONE, $_POST) ? $_POST[FN_TELEPHONE] : '' ?>"/>
+                            <input type="tel" name="<?= FN_TELEPHONE ?>" id="<?= FN_TELEPHONE ?>" placeholder="(514)555-5555" maxlength="13"  value="<?= array_key_exists(FN_TELEPHONE, $_POST) ? $_POST[FN_TELEPHONE] : '' ?>"/>
 
                         </div>
                         <?php if (invalid(FN_TELEPHONE)) {
@@ -283,7 +276,7 @@ if ($en_reception) {
 
                         </div>
                         <?php if (invalid(FN_COMMENTAIRE)) {
-                            echo "<p class='msg_validation'>{$vld[FN_COMMENTAIRE][K_ERR_MSG]}</p>";
+                            echo "<p class='msg_validation msgval'>{$vld[FN_COMMENTAIRE][K_ERR_MSG]}</p>";
                         } ?>
                     </fieldset>
                     <div id="contactbtn">
