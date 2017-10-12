@@ -12,7 +12,7 @@ if(array_key_exists('prod_id', $_GET) && array_key_exists($_GET['prod_id'], $pro
     $prod = $products[$prod_id];
 } else {
 
-    header('Location:shopping_cart.php');
+    header('Location:categories.php');
     exit('VALEUR DE PROD_ID REJETÉ -> EXIT');
 
 }
@@ -24,27 +24,21 @@ require_once 'views/header.php';
     <div id="wrapper" class="details">
     <section>
     <div class="div-content">
-
     <h3><?=$prod[PROD_NAME]?></h3>
         <h4><?=$prod[PROD_MODEL]?></h4>
         <h4><?=$prod[PROD_COLOR]?></h4>
         <img src="images/<?= $prod[PROD_IMG2] ?>" alt="<?= $prod[PROD_IMG2] ?>"/>
         <p><?= $prod[PROD_DESC_D] ?></p>
-
         <form class="detailscart" method="post">
-
             <label><span class="pricetag"><?=$prod[PROD_PRICE]?></span></label>
             <div class="addtocart"><span>Add to cart</span>
             <input type="hidden" name="card_item_id" value="<?= $prod_id ?>" />
             <input type="number" min="0" max="99" name="card_item_qty"
-            data-mini="true" value="<?= (array_key_exists($prod_id, $card) ) ?  $card[$prod_id]++ :  '0' ?>" />
+            data-mini="true" value="<?= (array_key_exists($prod_id, $card) ) ?  $card[$prod_id] :  '0' ?>" />
             </div>
+
+
         </form>
-
-
-
-
-
     </div>
     </section>
     </div>
